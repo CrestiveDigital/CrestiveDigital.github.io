@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="48" viewBox="0 0 180 48" fill="none">
+  <rect rx="10" width="48" height="48" fill="#64F0D2"/>
+  <path d="M16 30 L24 14 L32 30" stroke="#0b0e1d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 26 h8" stroke="#0b0e1d" stroke-width="3" stroke-linecap="round"/>
+  <text x="60" y="32" font-family="Inter, system-ui" font-size="22" font-weight="800" fill="#E7E9EE">Your Company</text>
+</svg>

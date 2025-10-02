@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Company — Software that ships</title>
+  <meta name="description" content="We build polished, scalable software for mobile and web.">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="assets/logo.svg" alt="Company logo" />
+        <span class="brand-name">Your Company</span>
+      </div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>We turn ideas into ship‑ready software.</h1>
+          <p>From rapid prototypes to production systems, we build performant apps with clean UX and solid engineering.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Get a quote</a>
+            <a class="btn ghost" href="#work">See our work</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <span class="stat-num">10×</span>
+            <span class="stat-label">Faster iterations</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">99.9%</span>
+            <span class="stat-label">Uptime targets</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Care for details</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section container">
+      <h2>Selected work</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Project A</h3>
+          <p>Describe a flagship build or client win.</p>
+          <span class="pill">React Native</span>
+          <span class="pill">Appwrite</span>
+        </article>
+        <article class="card">
+          <h3>Project B</h3>
+          <p>Show impact and measurable results.</p>
+          <span class="pill">Next.js</span>
+          <span class="pill">Cloud</span>
+        </article>
+        <article class="card">
+          <h3>Project C</h3>
+          <p>Brief value prop and tech stack.</p>
+          <span class="pill">Postgres</span>
+          <span class="pill">CI/CD</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2>Services</h2>
+      <ul class="service-list">
+        <li><strong>Mobile & Web Apps</strong> — React Native, React, Next.js</li>
+        <li><strong>Backends & Data</strong> — Appwrite, PostgreSQL, serverless</li>
+        <li><strong>UI/UX</strong> — Wireframes, prototyping, design systems</li>
+        <li><strong>DevOps</strong> — CI/CD, monitoring, performance</li>
+      </ul>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>We’re a small, hands‑on studio led by builders. We ship quickly, communicate clearly, and obsess over polish.</p>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2>Contact</h2>
+      <p>Ready to start? Send a note and we’ll reply within one business day.</p>
+      <!-- Tip: replace the form action with your Formspree endpoint or similar -->
+      <form method="POST" action="https://formspree.io/f/your-id">
+        <div class="grid">
+          <label> Name
+            <input type="text" name="name" required>
+          </label>
+          <label> Email
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <label> Project brief
+          <textarea name="message" rows="5" placeholder="What are you building?"></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+      <p class="muted">Prefer email? <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="year"></span> Your Company</span>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
