@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Profile — Crestive Digital</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
+        <span class="brand-name">Crestive Digital</span>
+      </div>
+      <nav>
+        <a href="../index.html#titles">Titles</a>
+        <a href="../index.html#focus">Focus</a>
+        <a href="../privacy.html">Privacy</a>
+        <a class="btn primary" href="mailto:info@crestive.digital">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section container">
+    <!-- Breadcrumb -->
+    <p class="breadcrumb"><a href="../index.html" class="btn primary">← Back</a></p>
+
+    <!-- Profile -->
+    <div class="grid-2">
+      <div>
+        <img src="../assets/profile-placeholder.png" alt="Team member photo" style="border-radius:16px; max-width:100%; border:1px solid var(--line)" />
+      </div>
+      <div>
+        <h1>Gregory Hudler</h1>
+        <p class="muted">Software Engineer / Co-Founder</p>
+        <p>
+          Gregory Hudler is a Co-founder of Crestive Digital, an independent mobile development studio dedicated to creating original software and games. With over 15 years of experience in IT systems, 
+            software engineering, and digital design, Gregory blends technical depth with creative vision.  Before founding Crestive Digital, he worked as a systems administrator and technical lead across 
+            enterprise infrastructure, cybersecurity, and cloud operations. That experience sharpened his focus on building scalable, reliable products. Today, he applies those skills to the studio’s in-house 
+            projects, bringing original concepts to the studio’s portfolio of apps and games, including:
+            <ul>
+        <li>LucidPaths – a productivity and goal-tracking app with intelligent task dependencies.</li>
+        <li>KinKitchen – a recipe-sharing and cookbook platform for families and communities.</li>
+        <li>Resonance – a narrative-driven mobile game exploring time and survival.</li>
+        <li>MyConcept.cloud – a creative notebook for writers and storytellers.</li>
+      </ul>
+        </p>
+        <p>
+            Gregory is passionate about designing polished user experiences, sustainable architectures, and storytelling that connects. His work is driven by the belief that great software should feel as 
+            human as it is powerful.
+        </p> 
+
+        <div class="kv" style="margin-top:20px">
+          <div><span>Email</span> <a href="mailto:info@crestive.digital">info@crestive.digital</a></div>
+          <div><span>Location</span> <span>Greater Philadelphia Area, United States</span></div>
+          <div><span>Specialties</span> <span>React Native, Database Engineer, Backend Engineer</span></div>
+        </div>
+
+        <!-- Optional external links -->
+        <div class="cta-row" style="margin-top:18px">
+          <a class="btn primary" href="https://github.com/concept-cloud" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn primary" href="https://www.linkedin.com/in/gregoryhudler/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="year"></span> Crestive Digital</span>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
