@@ -3,13 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy — Your Company</title>
+  <title>Privacy Policy — Crestive Digital</title>
   <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Crestive Digital Privacy Policy">
 </head>
 <body>
   <main class="section container">
     <h1>Privacy Policy</h1>
-    <p>This static site does not collect personal data by default. If you submit the contact form, your message will be sent to our form provider and emailed to us. We will only use it to respond to your inquiry.</p>
+    <p class="muted">Last updated: <span id="pdate"></span></p>
+
+    <p>
+      Crestive Digital (“we,” “us,” “our”) is an independent product studio. We design, build, and publish our
+      own software and games. We do not take client projects and we do not collaborate with outside companies.
+      This policy explains what information we collect on this website and across our products, how we use it,
+      and your choices.
+    </p>
+
+    <h2>1) What we collect</h2>
+    <ul>
+      <li><strong>Site diagnostics</strong> — Basic, privacy-respecting logs that help us keep the site secure and reliable (e.g., IP address, user agent, pages viewed, timestamps). We do not use third-party ad trackers.</li>
+      <li><strong>Contact messages</strong> — If you email <a href="mailto:info@crestive.digital">info@crestive.digital</a> or submit a form, we collect the contents of your message and any details you provide (name, email, project context, attachments).</li>
+      <li><strong>Product telemetry (if you opt in within our apps)</strong> — Some of our apps may collect usage events or crash reports to improve stability. When used, this is documented within the app and can be disabled where applicable.</li>
+    </ul>
+
+    <h2>2) How we use information</h2>
+    <p>
+      We use the information we collect <strong>only for Crestive Digital and our constituents</strong>—that is,
+      our own products, brands, legal entities, and trusted service providers acting on our instructions. Typical uses include:
+    </p>
+    <ul>
+      <li>Responding to inquiries and providing support.</li>
+      <li>Operating, securing, and improving our website and products.</li>
+      <li>Analyzing aggregated usage to plan features and prioritize fixes.</li>
+      <li>Meeting legal, compliance, and fraud-prevention obligations.</li>
+    </ul>
+
+    <h2>3) Legal bases (where applicable)</h2>
+    <ul>
+      <li><strong>Legitimate interests</strong> (e.g., security, product improvement, responding to messages).</li>
+      <li><strong>Consent</strong> (e.g., optional analytics/telemetry where offered).</li>
+      <li><strong>Legal obligation</strong> (e.g., to comply with law, enforce our terms, or protect rights).</li>
+    </ul>
+
+    <h2>4) Sharing</h2>
+    <p>
+      We do <strong>not</strong> sell personal data. We share information only with:
+    </p>
+    <ul>
+      <li><strong>Constituents and service providers</strong> that help us run our products (e.g., hosting, email delivery, error reporting). They may process data solely to provide their contracted services to us, under confidentiality and data-protection terms.</li>
+      <li><strong>Legal/disclosure</strong> when required by law, to protect our rights or users, or to prevent abuse.</li>
+    </ul>
+
+    <h2>5) Data retention</h2>
+    <p>
+      We keep personal data only as long as necessary for the purposes described above. Contact emails may be retained for record-keeping and to improve support. You can request deletion—see “Your rights” below.
+    </p>
+
+    <h2>6) Security</h2>
+    <p>
+      We use reasonable technical and organizational measures (e.g., access controls, encryption at rest/in transit where supported by our providers) to protect data. No system is perfectly secure, but we work to minimize risk and respond promptly to issues.
+    </p>
+
+    <h2>7) Children</h2>
+    <p>
+      Our site and general-audience products are not directed to children under 13 (or the equivalent age in your jurisdiction). If you believe a child provided personal information to us, contact <a href="mailto:info@crestive.digital">info@crestive.digital</a>.
+    </p>
+
+    <h2>8) International transfers</h2>
+    <p>
+      We may process and store information in countries other than where you live. When we transfer data, we rely on appropriate safeguards (such as contractual commitments) consistent with applicable law.
+    </p>
+
+    <h2>9) Your rights & choices</h2>
+    <ul>
+      <li>Access, correction, deletion, or portability of your data.</li>
+      <li>Opt-out of optional telemetry (where available in our apps).</li>
+      <li>Object to or restrict certain processing where applicable by law.</li>
+    </ul>
+    <p>To make a request, email <a href="mailto:info@crestive.digital">info@crestive.digital</a>. We may need to verify your identity.</p>
+
+    <h2>10) Cookies & tracking</h2>
+    <p>
+      We avoid invasive tracking. If we use cookies, they’re primarily functional (e.g., remembering preferences) or strictly necessary for security and performance. Any analytics we use will be privacy-respecting and aggregated.
+    </p>
+
+    <h2>11) Changes to this policy</h2>
+    <p>
+      We may update this policy as our products evolve. We’ll revise the “Last updated” date and, when changes are material, provide a more prominent notice.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about privacy? Reach us at <a href="mailto:info@crestive.digital">info@crestive.digital</a>.
+    </p>
+
+    <p class="muted" style="margin-top:24px;">
+      This page is provided for transparency and does not constitute legal advice.
+    </p>
+    
+    <p style="margin-top:40px;">
+      <a href="/" class="btn ghost">← Back to Home</a>
+    </p>
+
   </main>
+
+  <script>
+    // Auto-fill today's date for "Last updated"
+    const d = new Date();
+    document.getElementById('pdate').textContent =
+      `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  </script>
 </body>
 </html>
