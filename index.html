@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Company — Software that ships</title>
-  <meta name="description" content="We build polished, scalable software for mobile and web.">
+  <title>Crestive Digital — Mobile Dev Studio</title>
+  <meta name="description" content="Crestive Digital builds polished, scalable productivity apps, lifestyle software, mobile games, and custom web platforms.">
   <link rel="icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,12 @@
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
-        <img class="logo" src="assets/logo.svg" alt="Company logo" />
-        <span class="brand-name">Your Company</span>
+        <img class="logo" src="assets/logo.svg" alt="Crestive Digital logo" />
+        <span class="brand-name">Crestive Digital</span>
       </div>
       <nav>
         <a href="#work">Work</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a class="btn" href="#contact">Contact</a>
@@ -28,10 +29,11 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>We turn ideas into ship‑ready software.</h1>
+          <h1>We envision, engineer, and maintain mobile & web software.</h1>
           <p>From rapid prototypes to production systems, we build performant apps with clean UX and solid engineering.</p>
           <div class="cta-row">
             <a class="btn primary" href="#contact">Get a quote</a>
@@ -55,30 +57,72 @@
       </div>
     </section>
 
+    <!-- FEATURED CATEGORIES -->
     <section id="work" class="section container">
-      <h2>Selected work</h2>
+      <h2>What we ship</h2>
       <div class="cards">
+        <!-- Productivity -->
         <article class="card">
-          <h3>Project A</h3>
-          <p>Describe a flagship build or client win.</p>
+          <h3>Productivity Software</h3>
+          <p>Goal systems, task graphs, smart reminders, team collaboration, and visual progress (e.g., mountain-climb and radial menus).</p>
           <span class="pill">React Native</span>
-          <span class="pill">Appwrite</span>
+          <span class="pill">Appwrite / Postgres</span>
+          <span class="pill">Offline-first</span>
         </article>
+
+        <!-- Lifestyle -->
         <article class="card">
-          <h3>Project B</h3>
-          <p>Show impact and measurable results.</p>
+          <h3>Lifestyle & Wellness</h3>
+          <p>Habit trackers, recipe books, nutrition planners, family sharing, and print-ready outputs for fundraisers or keepsakes.</p>
+          <span class="pill">Expo</span>
+          <span class="pill">POD</span>
+          <span class="pill">Payments</span>
+        </article>
+
+        <!-- Mobile Games -->
+        <article class="card">
+          <h3>Mobile Games</h3>
+          <p>Fast-iterated prototypes to polished releases—touch UI, haptics, game loops, rewarding progression, and lightweight backend metrics.</p>
+          <span class="pill">Unity</span>
+          <span class="pill">RN Bridges</span>
+          <span class="pill">A/B events</span>
+        </article>
+
+        <!-- Other Mobile/Web -->
+        <article class="card">
+          <h3>Mobile & Web Platforms</h3>
+          <p>Customer portals, content tools, and bespoke dashboards with clean design systems and CI/CD baked in.</p>
           <span class="pill">Next.js</span>
-          <span class="pill">Cloud</span>
-        </article>
-        <article class="card">
-          <h3>Project C</h3>
-          <p>Brief value prop and tech stack.</p>
-          <span class="pill">Postgres</span>
+          <span class="pill">API-first</span>
           <span class="pill">CI/CD</span>
         </article>
       </div>
     </section>
 
+    <!-- CAPABILITIES (WHY US) -->
+    <section id="capabilities" class="section container">
+      <h2>Capabilities</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Design → Prototype → Ship</h3>
+          <p>Wireframes to clickable prototypes to store-ready apps. We keep scope tight and ship in short cycles.</p>
+        </article>
+        <article class="card">
+          <h3>Solid Data Foundations</h3>
+          <p>Appwrite/Postgres schemas, indexes, and migrations built for scale, observability, and low cost.</p>
+        </article>
+        <article class="card">
+          <h3>Delightful UX</h3>
+          <p>Animations, gestures, and accessibility baked in—because polish isn’t optional.</p>
+        </article>
+        <article class="card">
+          <h3>Ops & Reliability</h3>
+          <p>Monitoring, feature flags, and CI/CD pipelines so releases are boring (in a good way).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="services" class="section container">
       <h2>Services</h2>
       <ul class="service-list">
@@ -89,15 +133,17 @@
       </ul>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section container">
       <h2>About</h2>
-      <p>We’re a small, hands‑on studio led by builders. We ship quickly, communicate clearly, and obsess over polish.</p>
+      <p>Crestive Digital is a hands-on studio led by builders. We ship quickly, communicate clearly, and obsess over polish. Our favorite projects combine rigorous data models with friendly, intuitive UX.</p>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section container contact">
       <h2>Contact</h2>
       <p>Ready to start? Send a note and we’ll reply within one business day.</p>
-      <!-- Tip: replace the form action with your Formspree endpoint or similar -->
+      <!-- Replace the action with your Formspree endpoint or server. -->
       <form method="POST" action="https://formspree.io/f/your-id">
         <div class="grid">
           <label> Name
@@ -108,17 +154,17 @@
           </label>
         </div>
         <label> Project brief
-          <textarea name="message" rows="5" placeholder="What are you building?"></textarea>
+          <textarea name="message" rows="5" placeholder="Tell us about your productivity app, lifestyle idea, game concept, or web platform."></textarea>
         </label>
         <button class="btn primary" type="submit">Send</button>
       </form>
-      <p class="muted">Prefer email? <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+      <p class="muted">Prefer email? <a href="mailto:hello@crestive.digital">hello@crestive.digital</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container foot">
-      <span>© <span id="year"></span> Your Company</span>
+      <span>© <span id="year"></span> Crestive Digital</span>
       <a href="/privacy.html">Privacy</a>
     </div>
   </footer>
