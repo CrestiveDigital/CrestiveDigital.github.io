@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resonance — Crestive Digital</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
+        <span class="brand-name">Crestive Digital</span>
+      </div>
+      <nav>
+        <a href="../index.html#titles">Titles</a>
+        <a href="../index.html#focus">Focus</a>
+        <a href="../privacy.html">Privacy</a>
+        <a class="btn" href="mailto:info@crestive.digital">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section container">
+    <p class="breadcrumb"><a class="btn ghost" href="../">← Back</a></p>
+    <h1>Resonance</h1>
+    <p>A mobile sci-adventure with time-twist mechanics and narrative choice.</p>
+    <div style="margin-top:16px"><span class="pill">Mobile Game</span>
+<span class="pill">Unity</span>
+<span class="pill">Live Ops</span></div>
+
+    <section class="section" style="padding-top:24px">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Features</h3>
+          <ul>
+            <li>Clear, focused UX</li>
+            <li>Fast, offline-friendly core</li>
+            <li>Privacy-respecting defaults</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tech</h3>
+          <ul>
+            <li>React Native / Web</li>
+            <li>Appwrite / Postgres</li>
+            <li>CI/CD & Monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="year"></span> Crestive Digital</span>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
