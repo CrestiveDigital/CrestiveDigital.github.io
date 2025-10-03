@@ -1,12 +1,12 @@
 *{box-sizing:border-box}html,body{margin:0;padding:0}
 :root{--bg:#0f1223;--panel:#171a2b;--text:#e7e9ee;--muted:#a9afc3;--brand:#64F0D2;--line:#262a40}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; color:var(--text); background:linear-gradient(180deg,#0b0e1d,#12162a)}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;color:var(--text);background:linear-gradient(180deg,#0b0e1d,#12162a)}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 .site-header{position:sticky;top:0;z-index:10;background:rgba(15,18,35,.7);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand-name{letter-spacing:.2px}
-.logo{height:28px;width:auto}
+.logo{height:50px;width:auto}
 nav a{color:var(--text);text-decoration:none;margin-left:18px;opacity:.9}
 nav a:hover{opacity:1}
 .btn{display:inline-block;border:1px solid var(--line);padding:10px 14px;border-radius:10px;text-decoration:none}
@@ -38,23 +38,62 @@ input,textarea{background:#0e1224;border:1px solid var(--line);border-radius:10p
   .cards{grid-template-columns:1fr}
   .contact .grid{grid-template-columns:1fr}
 }
-/* Make entire cards clickable */
-.card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
-  cursor: pointer;
-}
-.card-link:hover,
-.card-link:focus {
-  transform: translateY(-2px);
-  border-color: var(--brand);
-  box-shadow: 0 6px 20px rgba(0,0,0,.25);
-  outline: none;
-}
-.card-link h3 { margin-top: 0; }
 
+/* Make entire cards clickable */
+.card-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
+  cursor:pointer;
+}
+.card-link:hover{transform:translateY(-1px);transition:transform 120ms}
+.card-link:focus{
+  transform:translateY(-2px);
+  border-color:var(--brand);
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  outline:none;
+}
+.card-link h3{margin-top:0}
+
+/* Only clickable cards get hover/focus effects */
+a.card:hover,
+a.card:focus-visible,
+a.card.card-link:hover,
+a.card.card-link:focus-visible{
+  border-color:var(--brand);
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  transform:translateY(-1px);
+  outline:none;
+}
+
+/* Global link color = brand green */
+a{
+  color:var(--brand);
+  text-decoration:none;
+}
+a:hover,
+a:focus-visible{
+  color:var(--brand);
+  text-decoration:underline;
+}
+
+/* EXCEPT inside cards: inherit local text color */
+.card a,
+a.card,            /* if the card itself is an <a> */
+.card-link,        /* if an <a> wraps the card */
+.card-link .card a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* Card transition baseline */
+.card{
+  padding:clamp(16px,3.5vw,24px);
+  transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
+}
+
+/* Title row with icon */
 .card-title{
   display:flex;
   align-items:center;
@@ -62,35 +101,317 @@ input,textarea{background:#0e1224;border:1px solid var(--line);border-radius:10p
   line-height:1.1;
 }
 .card-title .app-icon{
-  width:24px;
-  height:24px;
-  border-radius:6px;   /* nice rounded corners for PNGs */
-  flex:0 0 24px;
+  width:24px;height:24px;border-radius:6px;flex:0 0 24px;
 }
 
-/* Title+description with icon */
-.card-app {
+/* Title + description with icon */
+.card-app{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:8px;
+}
+.card-app .app-icon{
+  width:75px;height:75px;border-radius:8px;flex:0 0 75px;
+  box-shadow:0 4px 8px rgba(0,0,0,.25);
+}
+.card-app .app-text h3{margin:0 0 4px 0;line-height:1.1}
+.card-app .app-text p{margin:0;color:var(--muted)}
+
+/* Mobile padding for cards */
+@media (max-width:640px){
+  .cards{
+    grid-template-columns:1fr;
+    padding-inline:12px;
+    gap:14px;
+  }
+  .card{
+    padding:20px;
+    border-radius:16px;
+  }
+  .card-app{gap:14px}
+}
+
+/* ===== Rotating hero card (right column) ===== */
+.hero-rotator{
+  position:relative;
+  min-height:140px;  /* keep layout stable as slides change */
+  overflow:hidden;
+}
+
+/* Slides use the existing .hero-card chrome */
+.rotator-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:translateY(6px);
+  pointer-events:none;
+  transition:opacity .5s ease,transform .5s ease;
+}
+.rotator-slide.is-active{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+/* Optional: controls (show if you add the buttons in HTML) */
+.rotator-controls{
+  position:absolute;
+  bottom:8px;
+  right:8px;
+  display:flex;
+  gap:8px;
+}
+.rotator-controls button{
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:6px 10px;
+  font:inherit;
+  cursor:pointer;
+}
+.rotator-controls button:hover,
+.rotator-controls button:focus-visible{border-color:var(--brand)}
+
+/* Pagination dots */
+.rotator-dots{
+  position:absolute;
+  left:0;right:0;bottom:10px;
+  display:flex;gap:6px;justify-content:center;
+}
+.rotator-dots button{
+  width:7px;height:7px;border-radius:50%;
+  border:1px solid var(--line);
+  background:transparent;
+  padding:0;cursor:pointer;
+}
+.rotator-dots button[aria-current="true"]{
+  background:var(--brand);
+  border-color:var(--brand);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .rotator-slide{transition:none}
+}
+
+/* === Rotating hero card (matches .hero-card-rotator / .hc-slide) === */
+/* Rotating hero card (right column) — SLIDE effect */
+.hero-card-rotator{
+  position:relative;
+  min-height:180px;
+  overflow:hidden;
+  padding-bottom: 28px; /* space for dots */
+}
+
+/* Slides are stacked and slide horizontally */
+.hc-slide{
+  position:absolute;
+  inset:0;
+  transform:translateX(100%);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .45s ease, opacity .45s ease, box-shadow .45s ease;
+}
+
+/* Active slide (onscreen) */
+.hc-slide.is-active{
+  transform:translateX(0);
+  opacity:1;
+  pointer-events:auto;
+  z-index:2;
+}
+
+/* The slide that just left (to the left) */
+.hc-slide.is-prev{
+  transform:translateX(-100%);
+  opacity:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Dots */
+/* Dots containers (left + right) */
+.ht-dots,
+.hc-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 8px; /* space before pills */
+  justify-content: center;
+  gap: 8px;
+  pointer-events: auto;
+  z-index: 5;
 }
 
-.card-app .app-icon {
-  width: 75px;   /* or 40px if you want them bigger */
-  height: 75px;
-  border-radius: 8px;
-  flex: 0 0 75px;
-  /* Drop shadow */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+.ht-dots button,
+.hc-dots button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
-.card-app .app-text h3 {
-  margin: 0 0 4px 0;
-  line-height: 1.1;
+.ht-dots button[aria-current="true"],
+.hc-dots button[aria-current="true"] {
+  background: var(--brand);
+  border-color: var(--brand);
 }
 
-.card-app .app-text p {
-  margin: 0;
-  color: var(--muted);
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .hc-slide{ transition:none; }
 }
+
+/* LEFT rotator: slide whole text block */
+.hero-text-rotator {
+  position: relative;
+  min-height: 220px;        /* adjust so layout doesn't jump */
+  overflow: hidden;
+}
+.ht-slide {
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .45s ease, opacity .45s ease;
+}
+.ht-slide.is-active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.ht-slide.is-prev {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ht-slide { transition: none; }
+}
+
+/* ===== Combo hero rotator (left + right rotate together) ===== */
+/* Combo hero rotator (left + right rotate together) */
+.hero-rotator-combo{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 28px;                /* space for dots */
+  min-height: clamp(320px, 48vw, 620px); /* prevents first-paint clipping */
+}
+
+.hr-slide{
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .5s ease, opacity .5s ease;
+  will-change: transform;
+  backface-visibility: hidden;        /* prevents text tearing during slide */
+}
+
+.hr-slide.is-active{
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.hr-slide.is-prev{
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dots */
+.hr-dots{
+  position: absolute;
+  left: 0; right: 0; bottom: 6px;
+  display: flex; justify-content: center; gap: 8px;
+  z-index: 5; pointer-events: auto;
+}
+.hr-dots button{
+  width: 7px; height: 7px; border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent; padding: 0; cursor: pointer;
+}
+.hr-dots button[aria-current="true"]{
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hr-slide{ transition: none; }
+}
+
+/* --- Compact hero spacing --- */
+.hero {               /* less vertical padding for the whole hero */
+  padding: clamp(28px, 5vh, 56px) 0;
+}
+
+/* Combo rotator: remove tall min-height and extra bottom space */
+.hero-rotator-combo {
+  padding-bottom: 12px;      /* was 28px */
+  min-height: 220px;         /* remove any larger clamp/min-height you added */
+}
+
+/* Keep slides/animation as-is */
+
+/* Dots sit on top of content (don’t push layout down) */
+.hr-dots {
+  bottom: 8px;               /* closer to content */
+}
+
+/* Project icon + text layout in hero slides */
+.hero-project-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-icon-lg {
+  width: clamp(96px, 12vw, 150px);
+  height: clamp(96px, 12vw, 150px);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  object-fit: cover;
+}
+.hero-project-right p { margin-top: 10px; }
+.hero .cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-project-left{display:flex;align-items:center;justify-content:center}
+.project-icon-lg{
+  width:clamp(96px,12vw,150px);height:clamp(96px,12vw,150px);
+  border-radius:22px;object-fit:cover;box-shadow:0 10px 28px rgba(0,0,0,.35)
+}
+.hero-project-right p{margin-top:10px}
+.hero .cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+
+
+/* Tighter spacing for project slides (those that include .hero-project-left) */
+.hero-grid:has(.hero-project-left) {
+  grid-template-columns: minmax(84px, 130px) 1fr;      /* icon column just as wide as needed */
+  gap: clamp(8px, 1.8vw, 16px);                        /* smaller column gap */
+  align-items: center;                                  /* vertical centering */
+}
+
+/* Nudge the icon toward the text */
+.hero-project-left { justify-content: flex-end; }
+
+/* Slightly smaller icon to reduce visual distance (optional) */
+.project-icon-lg {
+  width: clamp(84px, 10vw, 130px);
+  height: clamp(84px, 10vw, 130px);
+}
+
+/* Compact text spacing on the right */
+.hero-project-right h1 { margin: 0 0 6px; }
+.hero-project-right p  { margin: 6px 0 0; }

@@ -16,12 +16,8 @@
     <div class="container nav">
       <div class="brand">
         <img class="logo" src="assets/logo.svg" alt="Crestive Digital logo" />
-        <span class="brand-name">Crestive Digital</span>
       </div>
       <nav>
-        <a href="#titles">Titles</a>
-        <a href="#focus">Focus</a>
-        <a href="#ethos">Ethos</a>
         <a href="#contact" class="btn primary">Contact</a>
       </nav>
     </div>
@@ -29,8 +25,30 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+<section class="hero">
+  <!-- One rotator controlling BOTH columns per slide -->
+  <div class="hero-rotator-combo" data-interval="6000" aria-live="polite" aria-roledescription="carousel" tabindex="0">
+
+  <!-- Slide 7 — MyConcept.cloud -->
+    <div class="hr-slide">
       <div class="container hero-grid">
+        <div class="hero-project-left">
+          <img class="project-icon-lg" src="assets/projecticons/myConceptCloud.png" alt="MyConcept.cloud icon">
+        </div>
+        <div class="hero-project-right">
+          <h1>MyConcept.cloud</h1>
+          <p>Idea capture & scene notebook with fast search and clean editing.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="projects/myconcept.html">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 1 — Original top copy + stats card -->
+    <div class="hr-slide is-active">
+      <div class="container hero-grid">
+        <!-- LEFT -->
         <div>
           <h1>We strive for perfection, and when it's 100% in house, it's truly ours.</h1>
           <p>Independent studio building productivity tools, lifestyle apps, mobile games, and web platforms—designed, engineered, and published in-house.</p>
@@ -39,28 +57,127 @@
             <a class="btn primary" href="#focus">What we build</a>
           </div>
         </div>
+        <!-- RIGHT -->
         <div class="hero-card">
-          <div class="stat">
-            <span class="stat-num">1</span>
-            <span class="stat-label">Current Active Projects</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">4</span>
-            <span class="stat-label">Projects Currently Queued</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">3</span>
-            <span class="stat-label">Current Developers</span>
+          <div class="stat"><span class="stat-num">1</span><span class="stat-label">Current Active Projects</span></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Projects Currently Queued</span></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Current Developers</span></div>
+        </div>
+      </div>
+    </div>
+
+       <!-- Slide 4 — LucidPaths -->
+    <div class="hr-slide">
+      <div class="container hero-grid">
+        <!-- LEFT: icon -->
+        <div class="hero-project-left">
+          <img class="project-icon-lg" src="assets/projecticons/LucidPaths.png" alt="LucidPaths icon">
+        </div>
+        <!-- RIGHT: title + copy -->
+        <div class="hero-project-right">
+          <h1>LucidPaths</h1>
+          <p>Goal & task systems with visual progress and intelligent reminders.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="projects/lucidpaths.html">Learn more</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Slide 2 — Process summary + “What we build” -->
+    <div class="hr-slide">
+      <div class="container hero-grid">
+        <div>
+          <h1>From concept to launch—fast, polished, and reliable.</h1>
+          <p>We prototype, design, build, and ship on a tight loop so you see working software early and often.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#focus">What we build</a>
+            <a class="btn primary" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3 style="margin:0 0 6px">What we build</h3>
+          <div class="service-list">
+            <div class="pill">Cross-platform mobile apps</div>
+            <div class="pill">Web apps & microsites</div>
+            <div class="pill">Internal tools & dashboards</div>
+            <div class="pill">Game prototypes & pilots</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Slide 5 — KinKitchen -->
+    <div class="hr-slide">
+      <div class="container hero-grid">
+        <div class="hero-project-left">
+          <img class="project-icon-lg" src="assets/projecticons/Kin-Kitchen.png" alt="KinKitchen icon">
+        </div>
+        <div class="hero-project-right">
+          <h1>KinKitchen</h1>
+          <p>Family recipes, nutrition planners, and beautiful print-ready books.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="projects/kinkitchen.html">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 — Ethos + shipping style -->
+    <div class="hr-slide">
+      <div class="container hero-grid">
+        <div>
+          <h1>Small teams, big results.</h1>
+          <p>Clear roadmaps, task dependencies, and milestone tracking keep projects moving without the chaos.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#titles">See our titles</a>
+            <a class="btn primary" href="#ethos">Our ethos</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3 style="margin:0 0 6px">How we ship</h3>
+          <p class="muted" style="margin:6px 0 0">Weekly sprints, transparent backlogs, and clear ownership—so you always know what’s shipping next.</p>
+        </div>
+      </div>
+    </div>
+
+ 
+
+
+
+    <!-- Slide 6 — Resonance -->
+    <div class="hr-slide">
+      <div class="container hero-grid">
+        <div class="hero-project-left">
+          <!-- Keep the filename you used in Projects -->
+          <img class="project-icon-lg" src="assets/projecticons/Reasonance.png" alt="Resonance icon">
+        </div>
+        <div class="hero-project-right">
+          <h1>Resonance — The Echos from Tomorrow</h1>
+          <p>A mobile sci-adventure with time-twist mechanics and narrative choice.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="projects/resonance.html">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <!-- Dots (shared for the combo) -->
+    <div class="hr-dots" aria-hidden="true"></div>
+  </div>
+</section>
+
+
+
 
     <!-- TITLES (list real or placeholder products) -->
 <section id="titles" class="section container">
   <h2>Projects</h2>
   <div class="cards">
-       <a class="card card-link" href="projects/lucidpaths.html" aria-label="Open LucidPaths">
+
+    <a class="card card-link" href="projects/lucidpaths.html" aria-label="Open LucidPaths">
       <div class="card-app">
         <img class="app-icon" src="assets/projecticons/LucidPaths.png" alt="LucidPaths icon">
         <div class="app-text">
@@ -72,8 +189,7 @@
       <span class="pill">React Native</span>
     </a>
 
-
-       <a class="card card-link" href="projects/kinkitchen.html" aria-label="Open KinKitchen">
+    <a class="card card-link" href="projects/kinkitchen.html" aria-label="Open KinKitchen">
       <div class="card-app">
         <img class="app-icon" src="assets/projecticons/Kin-Kitchen.png" alt="KinKitchen icon">
         <div class="app-text">
@@ -89,14 +205,15 @@
       <div class="card-app">
         <img class="app-icon" src="assets/projecticons/Reasonance.png" alt="Resonance icon">
         <div class="app-text">
-          <h3>Resonance - Echos from Tomorrow</h3>
+          <h3>Resonance - The Echos from Tomorrow</h3>
           <p>A mobile sci-adventure with time-twist mechanics and narrative choice.</p>
         </div>
       </div>
       <span class="pill">Mobile Game</span>
       <span class="pill">Unity</span>
+    </a>  <!-- ← this closing tag was missing -->
 
-   <a class="card card-link" href="projects/myconcept.html" aria-label="Open MyConcept.cloud">
+    <a class="card card-link" href="projects/myconcept.html" aria-label="Open MyConcept.cloud">
       <div class="card-app">
         <img class="app-icon" src="assets/projecticons/myConceptCloud.png" alt="MyConcept.cloud icon">
         <div class="app-text">
@@ -107,6 +224,7 @@
       <span class="pill">Productivity</span>
       <span class="pill">React Native</span>
     </a>
+
   </div>
 </section>
 
@@ -187,5 +305,144 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+
+<script>
+(function(){
+  const root = document.querySelector('.hero-rotator-combo');
+  if (!root) return;
+
+  const slides = Array.from(root.querySelectorAll('.hr-slide'));
+  if (slides.length <= 1) return;
+
+  const intervalMs = parseInt(root.getAttribute('data-interval'), 10) || 6000;
+
+  // Build dots
+  const dotsHost = root.querySelector('.hr-dots') || (() => {
+    const d = document.createElement('div');
+    d.className = 'hr-dots';
+    root.appendChild(d);
+    return d;
+  })();
+  const dots = slides.map((_, idx) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.addEventListener('click', () => go(idx, true));
+    dotsHost.appendChild(b);
+    return b;
+  });
+
+  let i = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
+  if (i < 0) i = 0;
+  let timer = null, paused = false;
+
+  // ---- Height management (robust) ----
+  const activeEl = () => slides[i];
+
+function setHeightTo(el){
+  const h = Math.ceil(el.scrollHeight);   // natural content height
+  const min = 220;                         // matches CSS min-height
+  root.style.height = Math.max(min, h) + 'px';
+}
+
+  // Observe size changes in the active slide (fonts, wraps, images)
+  let ro = new ResizeObserver(() => setHeightTo(activeEl()));
+  ro.observe(activeEl());
+
+  // Re-observe when slide changes
+  function reobserveActive(){
+    ro.disconnect();
+    ro.observe(activeEl());
+  }
+
+  // Also re-measure after fonts and images load
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => setHeightTo(activeEl()));
+  }
+  // Any images inside slides
+  slides.forEach(slide => {
+    slide.querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', () => setHeightTo(activeEl()), { once: true });
+    });
+  });
+
+  // A couple of staged re-measures to catch late layout shifts
+  const stagedReflow = () => {
+    setHeightTo(activeEl());
+    setTimeout(() => setHeightTo(activeEl()), 60);
+    setTimeout(() => setHeightTo(activeEl()), 300);
+  };
+
+  function mark(prevIdx){
+    slides.forEach((s, idx) => {
+      s.classList.toggle('is-active', idx === i);
+      s.classList.toggle('is-prev',   idx === prevIdx);
+    });
+    dots.forEach((d, idx) => d.setAttribute('aria-current', idx === i ? 'true' : 'false'));
+    requestAnimationFrame(() => {
+      reobserveActive();
+      stagedReflow();
+    });
+    // Cleanup prev class after transition
+    if (prevIdx != null){
+      const prevEl = slides[prevIdx];
+      const handler = () => { prevEl.classList.remove('is-prev'); prevEl.removeEventListener('transitionend', handler); };
+      prevEl.addEventListener('transitionend', handler);
+    }
+  }
+
+  function go(n, user=false){
+    const prev = i;
+    i = (n + slides.length) % slides.length;
+    mark(prev);
+    if (user) restart();
+  }
+
+  const next = () => go(i + 1);
+
+  function start(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stop(); timer = setInterval(next, intervalMs);
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+  function restart(){ if (!paused && document.visibilityState === 'visible') start(); }
+
+  // Interactions
+  root.addEventListener('mouseenter', () => { paused = true; stop(); });
+  root.addEventListener('mouseleave', () => { paused = false; restart(); });
+  root.addEventListener('focusin',  () => { paused = true; stop(); });
+  root.addEventListener('focusout', () => { paused = false; restart(); });
+
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1, true); }
+  });
+
+  root.addEventListener('wheel', (e) => {
+    const mag = Math.abs(e.deltaY || e.deltaX);
+    if (mag < 15) return;
+    e.preventDefault();
+    (e.deltaY > 0 || e.deltaX > 0) ? next() : go(i - 1, true);
+  }, { passive: false });
+
+  let x0 = null;
+  root.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  root.addEventListener('touchend',   e => {
+    if (x0 == null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : go(i - 1, true); }
+    x0 = null;
+  });
+
+  // Init: make focusable, set height, and start
+  if (!root.hasAttribute('tabindex')) root.setAttribute('tabindex', '0');
+  mark(null);
+  stagedReflow();          // early height fix
+  start();
+  window.addEventListener('resize', () => setHeightTo(activeEl()));
+})();
+</script>
+
+
 </body>
 </html>
