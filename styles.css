@@ -332,3 +332,22 @@ input, textarea{
     width: clamp(140px, 32vw, 200px);
   }
 }
+
+@media (max-width: 640px){
+  :root{ --text-edge-pad: clamp(12px, 5vw, 20px); }
+
+  /* Add left/right padding to standalone paragraphs */
+  p{
+    padding-left:  max(var(--text-edge-pad), env(safe-area-inset-left));
+    padding-right: max(var(--text-edge-pad), env(safe-area-inset-right));
+  }
+
+  /* Don't double-pad paragraphs already inside padded containers/cards */
+  .container p,
+  .card p,
+  .hero-card p,
+  #titles .card-app .app-text p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
