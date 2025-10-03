@@ -4,6 +4,11 @@ html, body { margin: 0; padding: 0 }
 :root{
   --bg:#0f1223; --panel:#171a2b; --text:#e7e9ee; --muted:#a9afc3;
   --brand:#64F0D2; --line:#262a40;
+
+  /* Bigger HERO app logos */
+  --hero-icon-min: 120px;
+  --hero-icon-max: 190px;
+  --hero-icon-vw: 16vw;
 }
 body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -15,7 +20,7 @@ body{
 /* ===== Header / Nav ===== */
 .site-header{
   position: sticky; top: 0; z-index: 10;
-  background: #0f1223;
+  background: #0f1223;                 /* solid, no alpha */
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -160,25 +165,16 @@ input, textarea{
   .hr-track{ transition: none }
 }
 
-/* ===== Project slides: tighter icon + text layout ===== */
+/* ===== HERO project slides: bigger icon + tight layout ===== */
 .hero-grid:has(.hero-project-left){
-  grid-template-columns: minmax(84px, 130px) 1fr;
-  gap: clamp(8px, 1.8vw, 16px);
+  grid-template-columns: minmax(var(--hero-icon-min), var(--hero-icon-max)) 1fr; /* wider left col for bigger icon */
+  gap: clamp(12px, 2vw, 20px);
   align-items: center;
 }
-/* Fallback if :has() isn’t supported:
-   add class "hero-grid--project" to project slides and use the rule below. */
-/*
-.hero-grid--project{
-  grid-template-columns: minmax(84px, 130px) 1fr;
-  gap: clamp(8px, 1.8vw, 16px);
-  align-items: center;
-}
-*/
 .hero-project-left{ display:flex; align-items:center; justify-content:flex-end }
 .project-icon-lg{
-  width: clamp(84px, 10vw, 130px);
-  height: clamp(84px, 10vw, 130px);
+  width:  clamp(var(--hero-icon-min), var(--hero-icon-vw), var(--hero-icon-max));
+  height: clamp(var(--hero-icon-min), var(--hero-icon-vw), var(--hero-icon-max));
   border-radius:22px; object-fit:cover; box-shadow:0 10px 28px rgba(0,0,0,.35);
 }
 .hero-project-right h1{ margin:0 0 6px }
@@ -186,13 +182,117 @@ input, textarea{
 
 /* ===== Responsive ===== */
 @media (max-width: 900px){
-  .hero-grid{ grid-template-columns:1fr }
+  .hero-grid{ grid-template-columns:1fr } /* stack hero columns */
   .cards{ grid-template-columns:1fr }
   .contact .grid{ grid-template-columns:1fr }
-}
 
+  /* scale hero icons sanely on tablets */
+  .project-icon-lg{
+    width:  clamp(100px, 22vw, 160px);
+    height: clamp(100px, 22vw, 160px);
+  }
+  .hero-grid:has(.hero-project-left){
+    grid-template-columns: minmax(100px, 160px) 1fr;
+  }
+}
 @media (max-width: 640px){
   .cards{ grid-template-columns:1fr; padding-inline:12px; gap:14px }
   .card{ padding:20px; border-radius:16px }
-  .card-app{ gap:14px } /* if used */
+
+  /* slightly smaller on phones */
+  .project-icon-lg{
+    width:  clamp(96px, 28vw, 140px);
+    height: clamp(96px, 28vw, 140px);
+  }
+  .hero-grid:has(.hero-project-left){
+    grid-template-columns: minmax(96px, 140px) 1fr;
+  }
+}
+
+/* === Compact cards for the Projects section === */
+#titles .cards{
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+#titles .card{
+  padding: 12px 14px;          /* tighter padding */
+  border-radius: 12px;
+}
+#titles .card-app{
+  display: grid !important;
+  grid-template-columns: auto 1fr;  /* icon | text */
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 0;
+  margin-bottom: 6px;
+}
+#titles .card-app .app-icon{
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.25);
+  object-fit: cover;
+}
+#titles .card-app .app-text{ min-width: 0 }
+#titles .card-app .app-text h3{
+  font-size: 16px; margin: 0 0 2px; line-height: 1.15;
+}
+#titles .card-app .app-text p{
+  font-size: 13px; line-height: 1.35; margin: 0; color: var(--muted);
+}
+#titles .pill{
+  font-size: 11px; padding: 3px 6px; margin-top: 4px;
+}
+/* a touch more motion for the smaller cards */
+#titles .card-link:hover{ transform: translateY(-2px) }
+/* --- responsive tweaks for project cards --- */
+@media (max-width: 900px){
+  #titles .cards{ grid-template-columns: repeat(2,1fr) }
+}
+@media (max-width: 640px){
+  #titles .cards{ grid-template-columns: 1fr }
+  #titles .card{ padding: 14px }
+}
+
+/* === Team: image left, text right === */
+#team .profile-card { padding: 14px 16px; }
+
+.profile-row{
+  display: grid;
+  grid-template-columns: 95px 1fr;  /* avatar | text */
+  align-items: center;
+  column-gap: 12px;
+}
+
+.profile-avatar{
+  width: 95px;
+  height: 95px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0,0,0,.28);
+  display: block;
+}
+
+.profile-text{ min-width: 0; }
+.profile-text h3{
+  margin: 0 0 4px;
+  line-height: 1.15;
+}
+.profile-text p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.35;
+  overflow-wrap: anywhere; /* keeps long titles tidy */
+}
+
+/* Smaller on phones */
+@media (max-width: 640px){
+  .profile-row{
+    grid-template-columns: 60px 1fr;
+    column-gap: 10px;
+  }
+  .profile-avatar{
+    width: 60px; height: 60px; border-radius: 12px;
+  }
 }
