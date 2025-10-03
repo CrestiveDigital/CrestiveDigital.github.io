@@ -15,14 +15,14 @@ body{
 /* ===== Header / Nav ===== */
 .site-header{
   position: sticky; top: 0; z-index: 10;
-  background: rgba(15,18,35,.7);
+  background: #0f1223;
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line);
 }
 .nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
 .brand{ display:flex; align-items:center; gap:10px; font-weight:700 }
 .brand-name{ letter-spacing:.2px }
-.logo{ height:50px; width:auto }
+.logo{ height:50px; width:auto; }
 
 /* ===== Links & Buttons ===== */
 a{ color: var(--brand); text-decoration: none }
