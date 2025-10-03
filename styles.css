@@ -296,3 +296,39 @@ input, textarea{
     width: 60px; height: 60px; border-radius: 12px;
   }
 }
+
+/* Bigger brand logo in the HERO first slide */
+.hero-grid:has(.company-logo-lg){
+  grid-template-columns: minmax(180px, 280px) 1fr;  /* wider left col for logo */
+  gap: clamp(12px, 2vw, 24px);
+  align-items: center;
+}
+
+.company-logo-lg{
+  width: clamp(180px, 22vw, 280px);
+  height: auto;                 /* keep wordmark aspect ratio */
+  display: block;
+  filter: drop-shadow(0 10px 28px rgba(0,0,0,.35));
+  /* Optional: feathered edge, uncomment if you want it */
+  /* -webkit-mask-image: radial-gradient(ellipse at center, #000 calc(100% - 14px), transparent 100%); */
+  /*         mask-image: radial-gradient(ellipse at center, #000 calc(100% - 14px), transparent 100%); */
+  /* -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; */
+}
+
+/* Responsive tune-ups */
+@media (max-width: 900px){
+  .hero-grid:has(.company-logo-lg){
+    grid-template-columns: minmax(160px, 240px) 1fr;
+  }
+  .company-logo-lg{
+    width: clamp(160px, 26vw, 240px);
+  }
+}
+@media (max-width: 640px){
+  .hero-grid:has(.company-logo-lg){
+    grid-template-columns: minmax(140px, 200px) 1fr;
+  }
+  .company-logo-lg{
+    width: clamp(140px, 32vw, 200px);
+  }
+}
