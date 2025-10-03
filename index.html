@@ -26,9 +26,8 @@
   <main>
     <!-- HERO -->
 <section class="hero">
-  <!-- One rotator controlling BOTH columns per slide -->
   <div class="hero-rotator-combo" data-interval="6000" aria-live="polite" aria-roledescription="carousel" tabindex="0">
-
+    <div class="hr-track">
   <!-- Slide 7 — MyConcept.cloud -->
     <div class="hr-slide">
       <div class="container hero-grid">
@@ -161,10 +160,7 @@
         </div>
       </div>
     </div>
-
-  
-
-    <!-- Dots (shared for the combo) -->
+   </div>
     <div class="hr-dots" aria-hidden="true"></div>
   </div>
 </section>
@@ -309,21 +305,15 @@
 
 <script>
 (function(){
-  const root = document.querySelector('.hero-rotator-combo');
+  const root  = document.querySelector('.hero-rotator-combo');
   if (!root) return;
 
-  const slides = Array.from(root.querySelectorAll('.hr-slide'));
+  const track = root.querySelector('.hr-track');
+  const slides = Array.from(track.children);
   if (slides.length <= 1) return;
 
   const intervalMs = parseInt(root.getAttribute('data-interval'), 10) || 6000;
-
-  // Build dots
-  const dotsHost = root.querySelector('.hr-dots') || (() => {
-    const d = document.createElement('div');
-    d.className = 'hr-dots';
-    root.appendChild(d);
-    return d;
-  })();
+  const dotsHost = root.querySelector('.hr-dots');
   const dots = slides.map((_, idx) => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -335,66 +325,29 @@
   let i = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
   if (i < 0) i = 0;
   let timer = null, paused = false;
+  let ro = null;
 
-  // ---- Height management (robust) ----
-  const activeEl = () => slides[i];
-
-function setHeightTo(el){
-  const h = Math.ceil(el.scrollHeight);   // natural content height
-  const min = 220;                         // matches CSS min-height
-  root.style.height = Math.max(min, h) + 'px';
-}
-
-  // Observe size changes in the active slide (fonts, wraps, images)
-  let ro = new ResizeObserver(() => setHeightTo(activeEl()));
-  ro.observe(activeEl());
-
-  // Re-observe when slide changes
-  function reobserveActive(){
-    ro.disconnect();
-    ro.observe(activeEl());
+  function setHeightTo(el){
+    root.style.height = Math.max(220, Math.ceil(el.offsetHeight)) + 'px'; // compact but safe
   }
 
-  // Also re-measure after fonts and images load
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => setHeightTo(activeEl()));
+  function observeActive(){
+    if (ro) ro.disconnect();
+    ro = new ResizeObserver(() => setHeightTo(slides[i]));
+    ro.observe(slides[i]);
   }
-  // Any images inside slides
-  slides.forEach(slide => {
-    slide.querySelectorAll('img').forEach(img => {
-      if (!img.complete) img.addEventListener('load', () => setHeightTo(activeEl()), { once: true });
-    });
-  });
 
-  // A couple of staged re-measures to catch late layout shifts
-  const stagedReflow = () => {
-    setHeightTo(activeEl());
-    setTimeout(() => setHeightTo(activeEl()), 60);
-    setTimeout(() => setHeightTo(activeEl()), 300);
-  };
-
-  function mark(prevIdx){
-    slides.forEach((s, idx) => {
-      s.classList.toggle('is-active', idx === i);
-      s.classList.toggle('is-prev',   idx === prevIdx);
-    });
+  function mark(){
+    root.style.setProperty('--i', i);
     dots.forEach((d, idx) => d.setAttribute('aria-current', idx === i ? 'true' : 'false'));
-    requestAnimationFrame(() => {
-      reobserveActive();
-      stagedReflow();
-    });
-    // Cleanup prev class after transition
-    if (prevIdx != null){
-      const prevEl = slides[prevIdx];
-      const handler = () => { prevEl.classList.remove('is-prev'); prevEl.removeEventListener('transitionend', handler); };
-      prevEl.addEventListener('transitionend', handler);
-    }
+    slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+    setHeightTo(slides[i]);
+    observeActive();
   }
 
   function go(n, user=false){
-    const prev = i;
     i = (n + slides.length) % slides.length;
-    mark(prev);
+    mark();
     if (user) restart();
   }
 
@@ -407,24 +360,21 @@ function setHeightTo(el){
   function stop(){ if (timer){ clearInterval(timer); timer = null; } }
   function restart(){ if (!paused && document.visibilityState === 'visible') start(); }
 
-  // Interactions
+  // interactions
   root.addEventListener('mouseenter', () => { paused = true; stop(); });
   root.addEventListener('mouseleave', () => { paused = false; restart(); });
   root.addEventListener('focusin',  () => { paused = true; stop(); });
   root.addEventListener('focusout', () => { paused = false; restart(); });
-
   root.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
     if (e.key === 'ArrowLeft')  { e.preventDefault(); go(i - 1, true); }
   });
-
   root.addEventListener('wheel', (e) => {
     const mag = Math.abs(e.deltaY || e.deltaX);
     if (mag < 15) return;
     e.preventDefault();
     (e.deltaY > 0 || e.deltaX > 0) ? next() : go(i - 1, true);
   }, { passive: false });
-
   let x0 = null;
   root.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
   root.addEventListener('touchend',   e => {
@@ -434,12 +384,11 @@ function setHeightTo(el){
     x0 = null;
   });
 
-  // Init: make focusable, set height, and start
+  // init
   if (!root.hasAttribute('tabindex')) root.setAttribute('tabindex', '0');
-  mark(null);
-  stagedReflow();          // early height fix
+  mark();
   start();
-  window.addEventListener('resize', () => setHeightTo(activeEl()));
+  window.addEventListener('resize', () => setHeightTo(slides[i]));
 })();
 </script>
 
