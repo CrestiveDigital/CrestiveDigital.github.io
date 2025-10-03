@@ -54,3 +54,43 @@ input,textarea{background:#0e1224;border:1px solid var(--line);border-radius:10p
   outline: none;
 }
 .card-link h3 { margin-top: 0; }
+
+.card-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  line-height:1.1;
+}
+.card-title .app-icon{
+  width:24px;
+  height:24px;
+  border-radius:6px;   /* nice rounded corners for PNGs */
+  flex:0 0 24px;
+}
+
+/* Title+description with icon */
+.card-app {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px; /* space before pills */
+}
+
+.card-app .app-icon {
+  width: 75px;   /* or 40px if you want them bigger */
+  height: 75px;
+  border-radius: 8px;
+  flex: 0 0 75px;
+  /* Drop shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card-app .app-text h3 {
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.card-app .app-text p {
+  margin: 0;
+  color: var(--muted);
+}
