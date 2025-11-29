@@ -73,6 +73,15 @@ a.card,             /* if the card itself is an <a> */
 /* Small CTA row helper */
 .hero .cta-row{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap }
 
+/* Profile page grid */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start }
+@media (max-width: 900px){ .grid-2{ grid-template-columns:1fr } }
+
+/* Key-value pairs for profile pages */
+.kv{ display:grid; gap:10px }
+.kv > div{ display:flex; gap:12px; align-items:baseline }
+.kv > div > span:first-child{ color:var(--muted); font-weight:600; min-width:100px }
+
 /* ===== Sections / Cards ===== */
 .section{ padding:56px 0 }
 .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px }

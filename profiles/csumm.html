@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Profile — Crestive Digital</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
+      </div>
+      <nav>
+        <a class="btn primary" href="mailto:info@crestive.digital">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section container">
+    <!-- Breadcrumb -->
+    <p class="breadcrumb"><a href="../index.html" class="btn primary">← Back</a></p>
+
+    <!-- Profile -->
+    <div class="grid-2">
+      <div>
+        <img src="../assets/profileimage/Corey.png" alt="Corey Summerow Co-Founder" style="border-radius:16px; max-width:100%; border:1px solid var(--line)" />
+      </div>
+      <div>
+        <h1>Corey Summerow</h1>
+        <p class="muted">Software Engineer / Co-Founder</p>
+        <p>
+          Corey Summerow is a developer, designer, and entrepreneur specializing in AI-driven applications, interactive systems, and modern software development. As one of the first game developers at Hidden Studios, Corey played a key role in scaling the team and transforming the studio from zero revenue into a high-performing business generating over $50,000 a month and reaching millions of players.
+        </p>
+       
+        <p>
+          During his time at Hidden Studios, Corey contributed to major UEFN projects including collaborations with top creators and esports organizations. This included working on creator-led experiences such as Escape Caseoh and partnering with some of the biggest names in Fortnite like Caseoh, LazarBeam, SypherPK, and multiple professional teams. His work helped establish the studio's reputation for high-quality gameplay systems, polished environments, and rapid, reliable production pipelines.
+        </p>
+         <p>
+          Corey's technical foundation comes from his Computer Science education at Full Sail University, where he built projects in C++, React Native, systems programming, and AI. He has developed tools, simulations, mobile interfaces, and interactive systems with a focus on clean architecture, scalability, and seamless user experience.
+        </p>
+        <p>
+          He is passionate about crafting intuitive user experiences, building systems that feel powerful yet simple, and creating products that merge technical precision with creative vision. Corey believes the best software doesn't just function. It motivates, inspires, and brings ideas to life.
+        </p>
+
+        <div class="kv" style="margin-top:20px">
+          <div><span>Email</span> <a href="mailto:summerowbusiness@gmail.com">summerowbusiness@gmail.com</a></div>
+          <div><span>Specialties</span> <span>AI-driven applications, React Native, C++, UEFN, Game Development, Systems Programming</span></div>
+        </div>
+
+        <!-- Optional external links -->
+        <div class="cta-row" style="margin-top:18px">
+          <a class="btn primary" href="https://github.com/CoreyJC" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn primary" href="https://www.linkedin.com/in/corey-summerow-99abc/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="year"></span> Crestive Digital</span>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
