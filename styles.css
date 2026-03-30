@@ -423,17 +423,14 @@ input, textarea{
 /* ===== MinuteMark hero content ===== */
 
 .minutemark-hero-content{
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 32px;
-  align-items: start;
+  display: flex;
+  align-items:flex-start;
+  gap: 36px;
 }
 
 .minutemark-side-logo{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 84px;
+  width: 220px;
+  height: auto;
 }
 
 .minutemark-side-logo img{
@@ -466,8 +463,7 @@ input, textarea{
   }
 
   .minutemark-side-logo img{
-    width: 130px;
-    height: 130px;
+    display: block;
   }
 }
 
@@ -490,7 +486,8 @@ input, textarea{
 }
 
 .back-btn {
-  align-self: center;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .btn.outline-mint {
