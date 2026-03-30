@@ -359,4 +359,55 @@ input, textarea{
     padding-left: 0;
     padding-right: 0;
   }
+
+  /* ===== MinuteMark page only ===== */
+.minutemark-masthead{
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 110px;
+  isolation: isolate;
+}
+
+.minutemark-masthead::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("../assets/pageheaders/MinuteMarkMasthead.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.60;
+}
+
+.minutemark-masthead::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,14,29,0.02) 0%,
+    rgba(11,14,29,0.10) 12%,
+    rgba(11,14,29,0.35) 28%,
+    rgba(11,14,29,0.60) 48%,
+    rgba(11,14,29,0.82) 68%,
+    rgba(11,14,29,0.95) 82%,
+    #12162a 100%
+  );
+}
+
+.minutemark-masthead h1{
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.02;
+  margin: 0 0 14px;
+}
+
+.minutemark-description{
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
 }
