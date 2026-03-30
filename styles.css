@@ -366,7 +366,7 @@ input, textarea{
 .minutemark-masthead{
   position: relative;
   overflow: hidden;
-  padding: 90px 0 110px;
+  padding: 90px 0 340px;
   isolation: isolate;
 }
 
@@ -417,5 +417,41 @@ input, textarea{
   .minutemark-description{
     font-size: 16px;
     line-height: 1.55;
+  }
+}
+.minutemark-hero-content{
+  display: grid;
+  grid-template-columns: 1.2fr 220px;
+  gap: 32px;
+  align-items: center;
+}
+
+.minutemark-side-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minutemark-side-logo img{
+  width: 180px;
+  height: 180px;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+
+@media (max-width: 900px){
+  .minutemark-hero-content{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .minutemark-side-logo{
+    justify-content: flex-start;
+  }
+
+  .minutemark-side-logo img{
+    width: 130px;
+    height: 130px;
   }
 }
