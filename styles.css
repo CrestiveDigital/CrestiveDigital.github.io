@@ -470,3 +470,18 @@ input, textarea{
     height: 130px;
   }
 }
+
+/* Back button + logo column wrapper for better centering on mobile */
+
+.back-button-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.minutemark-side-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
