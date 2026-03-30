@@ -363,6 +363,8 @@ input, textarea{
 }
 
 /* ===== MinuteMark page only ===== */
+
+/* ===== MinuteMark page only ===== */
 .minutemark-masthead{
   position: relative;
   overflow: hidden;
@@ -397,16 +399,90 @@ input, textarea{
   );
 }
 
-.minutemark-masthead h1{
+/* Top back button row */
+.minutemark-topbar{
+  margin-bottom: 28px;
+}
+
+/* Main hero layout */
+.minutemark-hero-content{
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+/* Left icon column */
+.minutemark-side-logo{
+  width: 220px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.minutemark-side-logo img{
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 0;
+  border-radius: 28px;
+  object-fit: cover;
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+
+/* Right text block */
+.minutemark-text-block{
+  display: block;
+  flex: 1;
+}
+
+.minutemark-text-block h1{
+  margin: 0;
   font-size: clamp(44px, 6vw, 72px);
   line-height: 1.02;
-  margin: 0 0 14px;
 }
 
 .minutemark-description{
   max-width: 760px;
   font-size: 18px;
   line-height: 1.65;
+  margin-top: 14px;
+}
+
+/* Glass cards */
+.minutemark-masthead .card{
+  background: rgba(23, 26, 43, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Mint outline button */
+.btn.outline-mint{
+  background: transparent;
+  color: #62f0d2;
+  border: 2px solid #62f0d2;
+}
+
+.btn.outline-mint:hover{
+  background: rgba(98, 240, 210, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .minutemark-hero-content{
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .minutemark-side-logo{
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .minutemark-side-logo img{
+    width: 160px;
+    height: 160px;
+  }
 }
 
 @media (max-width: 640px){
@@ -418,90 +494,9 @@ input, textarea{
     font-size: 16px;
     line-height: 1.55;
   }
-}
-
-/* ===== MinuteMark hero content ===== */
-
-.minutemark-hero-content{
-  display: flex;
-  align-items:flex-start;
-  gap: 36px;
-}
-
-.minutemark-side-logo{
-  width: 220px;
-  height: auto;
-}
-
-.minutemark-side-logo img{
-  width: 180px;
-  height: 180px;
-  border-radius: 28px;
-  object-fit: cover;
-  box-shadow: 0 14px 40px rgba(0,0,0,.45);
-}
-
-.minutemark-text-block{
-  display: block;
-}
-
-.minutemark-masthead .card{
-  background: rgba(23, 26, 43, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-@media (max-width: 900px){
-  .minutemark-hero-content{
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .minutemark-side-logo{
-    justify-content: flex-start;
-    padding-top: 0;
-  }
 
   .minutemark-side-logo img{
-    display: block;
+    width: 140px;
+    height: 140px;
   }
-}
-
-/* Back button + logo column wrapper for better centering on mobile */
-
-.back-button-wrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 14px;
-}
-
-.minutemark-side-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  min-width: 220px;
-}
-
-.back-btn {
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.btn.outline-mint {
-  background: transparent;
-  color: #62f0d2;
-  border: 2px solid #62f0d2;
-}
-
-.btn.outline-mint:hover {
-  background: rgba(98, 240, 210, 0.08);
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 12px;
-  align-items: center;
 }
