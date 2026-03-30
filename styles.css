@@ -373,7 +373,7 @@ input, textarea{
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("../assets/pageheaders/MinuteMarkMasthead.png");
+ background-image: url("assets/pageheaders/MinuteMarkMasthead.png");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -408,6 +408,5 @@ input, textarea{
   font-size: 18px;
   line-height: 1.65;
 }
-
 
 }
