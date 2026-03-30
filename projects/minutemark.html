@@ -7,24 +7,29 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
- <header class="site-header">
-  <div class="container nav">
-    <div class="brand">
-      <a href="../index.html" aria-label="Back to Crestive Digital home">
-        <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
-      </a>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="../index.html" aria-label="Back to Crestive Digital home">
+          <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
+        </a>
+      </div>
+
+      <nav>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+        <a class="btn primary" href="mailto:info@crestive.digital">Contact</a>
+      </nav>
     </div>
-    <nav>
-      <a class="btn primary" href="mailto:info@crestive.digital">Contact</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
   <main>
     <section class="minutemark-masthead">
-        <p class="breadcrumb">
-            <a class="btn primary" href="../">← Back</a>
-          </p>
+      <p class="breadcrumb">
+        <a class="btn primary" href="../index.html">← Back</a>
+      </p>
+
       <div class="container minutemark-hero-content">
         <div class="minutemark-side-logo">
           <img src="../assets/projecticons/MinuteMark.png" alt="MinuteMark app icon">
@@ -34,13 +39,19 @@
           <h1>MinuteMark</h1>
 
           <p class="minutemark-description">
-            MinuteMark is a precision time tracking and segmentation app built to help users organize time into meaningful intervals. It is designed for people who need a clearer way to measure focus, billable work, and productive sessions without losing simplicity.
+            MinuteMark is a precision time tracking and segmentation app built to help users organize time into meaningful intervals.
+            It is designed for people who need a clearer way to measure focus, billable work, and productive sessions without losing simplicity.
           </p>
 
           <div style="margin-top:16px">
             <span class="pill">Productivity</span>
             <span class="pill">SwiftUI</span>
             <span class="pill">iOS</span>
+          </div>
+
+          <div style="margin-top:24px">
+            <a class="btn primary" href="#">Coming Soon on App Store</a>
+            <a class="btn" href="support.html">Support</a>
           </div>
         </div>
       </div>
@@ -53,6 +64,7 @@
               <li>Segment-based time tracking</li>
               <li>Clear visual progress feedback</li>
               <li>Simple reporting for focused sessions</li>
+              <li>Weekly totals and day-by-day review</li>
             </ul>
           </div>
 
@@ -66,13 +78,38 @@
           </div>
         </div>
       </div>
+
+      <!-- NEW PRODUCT PAGE LINKS -->
+      <div class="container" style="padding-top:32px; padding-bottom:48px;">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Privacy Policy</h3>
+            <p>Read how MinuteMark handles your data and privacy.</p>
+            <a class="btn" href="privacy.html">Open Privacy</a>
+          </div>
+
+          <div class="card">
+            <h3>Support</h3>
+            <p>Get help, FAQs, and contact support.</p>
+            <a class="btn" href="support.html">Open Support</a>
+          </div>
+
+          <div class="card">
+            <h3>Terms of Use</h3>
+            <p>Read the terms and usage guidelines.</p>
+            <a class="btn" href="terms.html">Open Terms</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container foot">
       <span>© <span id="year"></span> Crestive Digital</span>
-      <a href="../privacy.html">Privacy</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="terms.html">Terms</a>
     </div>
   </footer>
 
