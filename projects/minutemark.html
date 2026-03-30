@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MinuteMark — Crestive Digital</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img class="logo" src="../assets/logo.svg" alt="Crestive Digital logo" />
+      </div>
+      <nav>
+        <a class="btn primary" href="mailto:info@crestive.digital">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section container">
+    <p class="breadcrumb"><a class="btn primary" href="../">← Back</a></p>
+    <h1>MinuteMark</h1>
+    <p>MinuteMark is a precision time tracking and segmentation app built to help users organize time into meaningful intervals. It is designed for people who need a clearer way to measure focus, billable work, and productive sessions without losing simplicity. With structured segments, visual feedback, and intuitive reporting, MinuteMark turns raw time into actionable insight for both personal and professional use.</p>
+
+    <div style="margin-top:16px">
+      <span class="pill">Productivity</span>
+      <span class="pill">SwiftUI</span>
+      <span class="pill">iOS</span>
+    </div>
+
+    <section class="section" style="padding-top:24px">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Features</h3>
+          <ul>
+            <li>Segment-based time tracking</li>
+            <li>Clear visual progress feedback</li>
+            <li>Simple reporting for focused sessions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tech</h3>
+          <ul>
+            <li>SwiftUI</li>
+            <li>iOS-first design</li>
+            <li>Local-first productivity workflow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="year"></span> Crestive Digital</span>
+      <a href="../privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
