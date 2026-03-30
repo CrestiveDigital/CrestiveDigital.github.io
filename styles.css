@@ -502,3 +502,9 @@ input, textarea{
 .btn.outline-mint:hover {
   background: rgba(98, 240, 210, 0.08);
 }
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
