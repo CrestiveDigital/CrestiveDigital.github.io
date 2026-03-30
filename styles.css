@@ -360,7 +360,9 @@ input, textarea{
     padding-right: 0;
   }
 
-  /* ===== MinuteMark page only ===== */
+}
+
+/* ===== MinuteMark page only ===== */
 .minutemark-masthead{
   position: relative;
   overflow: hidden;
@@ -373,11 +375,11 @@ input, textarea{
   position: absolute;
   inset: 0;
   z-index: -2;
- background-image: url("assets/pageheaders/MinuteMarkMasthead.png");
+  background-image: url("assets/pageheaders/MinuteMarkMasthead.png");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.60;
+  opacity: 0.9;
 }
 
 .minutemark-masthead::after{
@@ -387,12 +389,10 @@ input, textarea{
   z-index: -1;
   background: linear-gradient(
     to bottom,
-    rgba(11,14,29,0.02) 0%,
-    rgba(11,14,29,0.10) 12%,
-    rgba(11,14,29,0.35) 28%,
-    rgba(11,14,29,0.60) 48%,
-    rgba(11,14,29,0.82) 68%,
-    rgba(11,14,29,0.95) 82%,
+    rgba(11,14,29,0.00) 0%,
+    rgba(11,14,29,0.10) 20%,
+    rgba(11,14,29,0.35) 45%,
+    rgba(11,14,29,0.70) 70%,
     #12162a 100%
   );
 }
@@ -409,4 +409,13 @@ input, textarea{
   line-height: 1.65;
 }
 
+@media (max-width: 640px){
+  .minutemark-masthead{
+    padding: 72px 0 88px;
+  }
+
+  .minutemark-description{
+    font-size: 16px;
+    line-height: 1.55;
+  }
 }
